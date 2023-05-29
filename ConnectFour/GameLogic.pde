@@ -8,22 +8,21 @@ void checkIfWon() {
 // Drop a token in column number x.
 void dropTokenInColumn(int x) {
     // if top-square is full: do nothing. Else, find y-coord to place disc.
-    if (winner == 0 && board[0][x] == 0) { 
+    if (winner == 0 && board[0][x] == 0) {
         for (int y = 0; y <= board_h; y++) {
             if (y == board_h || board[y][x] != 0) {
                 board[y-1][x] = player_turn;
                 break;
             }
         }
-        
+
         if (player_turn == 1) {
             player_turn = 2;
-        }
-        else {
+        } else {
             player_turn = 1;
         }
         if (CHEAT_only_one_player) {
-            player_turn = 1;    
+            player_turn = 1;
         }
         checkIfWon();
     }
@@ -37,24 +36,21 @@ void checkHorizontalWins() {
             if (board[y][x] == 1) {
                 p1_counter++;
                 p2_counter = 0;
-            }
-            else if (board[y][x] == 2) {
+            } else if (board[y][x] == 2) {
                 p2_counter++;
                 p1_counter = 0;
-            }
-            else {
+            } else {
                 p1_counter = 0;
                 p2_counter = 0;
             }
-            
+
             if (p1_counter == in_a_row_to_win) {
                 winner = 1;
-            }
-            else if (p2_counter == in_a_row_to_win) {
-                winner = 2;    
+            } else if (p2_counter == in_a_row_to_win) {
+                winner = 2;
             }
         }
-    }    
+    }
 }
 
 void checkVerticalWins() {
@@ -65,24 +61,21 @@ void checkVerticalWins() {
             if (board[y][x] == 1) {
                 p1_counter++;
                 p2_counter = 0;
-            }
-            else if (board[y][x] == 2) {
+            } else if (board[y][x] == 2) {
                 p2_counter++;
                 p1_counter = 0;
-            }
-            else {
+            } else {
                 p1_counter = 0;
                 p2_counter = 0;
             }
-            
+
             if (p1_counter == in_a_row_to_win) {
                 winner = 1;
-            }
-            else if (p2_counter == in_a_row_to_win) {
-                winner = 2;    
+            } else if (p2_counter == in_a_row_to_win) {
+                winner = 2;
             }
         }
-    }    
+    }
 }
 
 void checkDownRightDiagonalWins() {
@@ -104,21 +97,18 @@ void checkDownRightDiagonalWinsInLowerLeftHalf() {
             if (board[y][x] == 1) {
                 p1_counter++;
                 p2_counter = 0;
-            }
-            else if (board[y][x] == 2) {
+            } else if (board[y][x] == 2) {
                 p2_counter++;
                 p1_counter = 0;
-            }
-            else {
+            } else {
                 p1_counter = 0;
                 p2_counter = 0;
             }
-            
+
             if (p1_counter == in_a_row_to_win) {
                 winner = 1;
-            }
-            else if (p2_counter == in_a_row_to_win) {
-                winner = 2;    
+            } else if (p2_counter == in_a_row_to_win) {
+                winner = 2;
             }
             x++;
             y++;
@@ -140,21 +130,18 @@ void checkDownRightDiagonalWinsInUpperRightHalf() {
             if (board[y][x] == 1) {
                 p1_counter++;
                 p2_counter = 0;
-            }
-            else if (board[y][x] == 2) {
+            } else if (board[y][x] == 2) {
                 p2_counter++;
                 p1_counter = 0;
-            }
-            else {
+            } else {
                 p1_counter = 0;
                 p2_counter = 0;
             }
-            
+
             if (p1_counter == in_a_row_to_win) {
                 winner = 1;
-            }
-            else if (p2_counter == in_a_row_to_win) {
-                winner = 2;    
+            } else if (p2_counter == in_a_row_to_win) {
+                winner = 2;
             }
             x++;
             y++;
@@ -181,21 +168,18 @@ void checkDownLeftDiagonalWinsInLowerRightHalf() {
             if (board[y][x] == 1) {
                 p1_counter++;
                 p2_counter = 0;
-            }
-            else if (board[y][x] == 2) {
+            } else if (board[y][x] == 2) {
                 p2_counter++;
                 p1_counter = 0;
-            }
-            else {
+            } else {
                 p1_counter = 0;
                 p2_counter = 0;
             }
-            
+
             if (p1_counter == in_a_row_to_win) {
                 winner = 1;
-            }
-            else if (p2_counter == in_a_row_to_win) {
-                winner = 2;    
+            } else if (p2_counter == in_a_row_to_win) {
+                winner = 2;
             }
             x--;
             y++;
@@ -218,21 +202,18 @@ void checkDownLeftDiagonalWinsInUpperLeftHalf() {
             if (board[y][x] == 1) {
                 p1_counter++;
                 p2_counter = 0;
-            }
-            else if (board[y][x] == 2) {
+            } else if (board[y][x] == 2) {
                 p2_counter++;
                 p1_counter = 0;
-            }
-            else {
+            } else {
                 p1_counter = 0;
                 p2_counter = 0;
             }
-            
+
             if (p1_counter == in_a_row_to_win) {
                 winner = 1;
-            }
-            else if (p2_counter == in_a_row_to_win) {
-                winner = 2;    
+            } else if (p2_counter == in_a_row_to_win) {
+                winner = 2;
             }
             x--;
             y++;

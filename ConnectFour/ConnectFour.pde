@@ -17,21 +17,21 @@ int winner;                       // 0: No one has won yet. 1: player 1 has won.
 
 void setup() {
     size(800, 800);
-    
+
     // Cheats
     CHEAT_only_one_player = false;
-    
+
     // Game Settings
     board_w = 7;
     board_h = 6;
     in_a_row_to_win = 4;
     background_color = color(200);
-    
+
     // Visual Settings
     token_diagonal = width/board_w;
-    
+
     // Dynamic variables
     board = new int[board_h][board_w];
     player_turn = 1;
-    winner = 0;        
+    winner = 0;
 }
